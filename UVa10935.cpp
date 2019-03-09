@@ -1,3 +1,4 @@
+// not done
 #include <bits/stdc++.h>
 #include <queue>
 using namespace std;
@@ -15,32 +16,24 @@ int main(){
         if(n == 0)  break;
         else num.push_back(n);
     }
-    cout << num.size() << endl;
+
     for(int i = 0; i < num.size(); i++){
         for(int j = 0; j < num[i]; j++){
             q.push(j+1);
         }
-        // while(q.size()>0){
-        //     cout << q.front() << endl;
-        //     q.pop();
-        // }
-        // int temp = 0;
-        // while(q.size() > 1){
-        //     cout << q.front();
-        //     q.pop();
-        //     temp = q.front();
-        //     q.pop();
-        //     q.push(temp);
-        //     if(q.size() == 1){
-        //         cout << endl;
-        //         break;
-        //     }
-        //     else cout << ", ";
-        // }
-        // cout << q.front();
-
+        cout << "Discarded cards: ";
+        while(q.size() > 1){
+            cout << q.front();
+            q.pop();
+            if(q.size() > 1)    cout << ", ";
+            else break;
+            int temp = 0;
+            temp = q.front();
+            q.push(temp);
+            q.pop();
+        }
+        cout << "\n" << "Remaining card: " << q.front() << "\n";
+        q.pop();
     }
-
-
     return 0;
 }
