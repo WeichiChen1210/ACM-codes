@@ -1,23 +1,22 @@
-// not done
 #include <bits/stdc++.h>
+#include <cstdio>
 using namespace std;
 
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+    // ios::sync_with_stdio(false);
+    // cin.tie(nullptr);
 
     string chars = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
-    string input;
-    getline(cin, input);
-    for(int i = 0; i < input.size(); i++){
-        if(input[i] == ' ') cout << " ";
-        else{
-            int pos;
-            pos = chars.find(input[i]);
-            cout << chars[pos-1];
+    char input;
+    while((input = getchar()) != EOF )
+    {
+        if( input == ' ' || input == '\n' ) cout << input;
+        else {
+            int i;
+            for(i = 0 ; chars[i] != input; i++);
+            cout << chars[i-1];
         }
     }
-
     return 0;
 
 }
